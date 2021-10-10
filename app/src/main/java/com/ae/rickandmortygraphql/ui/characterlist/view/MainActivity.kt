@@ -1,7 +1,8 @@
-package com.ae.rickandmortygraphql
+package com.ae.rickandmortygraphql.ui.characterlist.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ae.rickandmortygraphql.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
