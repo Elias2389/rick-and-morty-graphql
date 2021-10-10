@@ -55,6 +55,8 @@ dependencies {
     implementation("com.apollographql.apollo:apollo-runtime:2.5.9")
     implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.9")
 
+    // OkHttp
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
