@@ -51,6 +51,10 @@ dependencies {
     // Koin
     implementation "io.insert-koin:koin-android:3.1.2"
 
+    // Apollo
+    implementation("com.apollographql.apollo:apollo-runtime:2.5.9")
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.9")
+
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
