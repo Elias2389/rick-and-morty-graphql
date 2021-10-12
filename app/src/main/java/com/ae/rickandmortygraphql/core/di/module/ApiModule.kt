@@ -1,19 +1,24 @@
 package com.ae.rickandmortygraphql.core.di.module
 
 import com.apollographql.apollo.ApolloClient
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
-import org.koin.dsl.module
 
-val apiModule = module {
 
-    // Provide ApolloClient
-    single<ApolloClient> {
-        ApolloClient.builder()
-            .serverUrl("https://rickandmortyapi.com/graphql")
-            .okHttpClient(get())
-            .build()
-    }
+@Module
+@InstallIn(SingletonComponent::class)
+object ApiModule {
 
-    // Provide OkHttpClient
-    single<OkHttpClient> { OkHttpClient.Builder().build() }
+    @Provides
+    fun provideHttpClient() = OkHttpClient.Builder().build()
+
+    @Provides
+    fun provideApolloClient(okHttpClient: OkHttpClient): ApolloClient = ApolloClient.builder()
+        .serverUrl("https://rickandmortyapi.com/graphql")
+        .okHttpClient(okHttpClient)
+        .build()
+
 }
