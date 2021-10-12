@@ -1,17 +1,13 @@
 package com.ae.rickandmortygraphql.core.app
 
 import android.app.Application
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class MainApp: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        setupKoin()
     }
 
-    private fun setupKoin() = startKoin {
-        androidContext(this@MainApp)
-    }
 }
